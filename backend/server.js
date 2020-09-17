@@ -2,12 +2,14 @@ import express from 'express'
 import mongoose from 'mongoose'
 import Cards from './dbCards.js'
 import Cors from 'cors';
+//require('dotenv').config();
+import {} from 'dotenv/config.js';
 
 const app = express();
 
-const port = process.env.PORT || 8001;
+const port = process.env.PORT || process.env.PORT_NO;
 
-const connection_url = 'mongodb+srv://admin:10Str@whats@cluster0.roz9i.mongodb.net/tinderdb?retryWrites=true&w=majority';
+const connection_url = process.env.URL;
 
 app.use(express.json());
 app.use(Cors());
